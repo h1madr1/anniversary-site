@@ -3,50 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For You ❤️</title>
+  <title>Our Story ❤️</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- Floating Hearts -->
+<div class="hearts"></div>
+
 <!-- PASSWORD SCREEN -->
-<div id="lockScreen" class="lock-screen">
-  <h2>Enter Our Special Date ❤️</h2>
-  <input type="password" id="password" placeholder="DDMMYYYY">
-  <button onclick="unlockSite()">Unlock</button>
+<div id="password-screen" class="screen active">
+  <h2>Enter our special date ❤️</h2>
+  <input type="password" id="passwordInput" placeholder="DDMMYYYY">
+  <button onclick="checkPassword()">Unlock</button>
+  <p id="error"></p>
+</div>
+
+<!-- ENTRY SCREEN -->
+<div id="entry-screen" class="screen">
+  <h2>I made something just for you...</h2>
+  <button onclick="startExperience()">Tap to start our story ❤️</button>
 </div>
 
 <!-- MAIN CONTENT -->
-<div id="mainContent" class="hidden">
-  <audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
+<div id="main-content">
 
-  <div class="container">
-    <h1>Happy 3 Years ❤️</h1>
+  <h1 class="main-title">Happy Anniversary Bouraniii ❤️🤗😘</h1>
 
-    <!-- LOVE LETTER -->
-    <div class="section">
-      <h2>For You 💌</h2>
-      <p id="typewriter"></p>
+  <!-- SECTION 1 -->
+  <section class="fade">
+    <img src="proposal.jpeg" class="full-img">
+    <p>The moment everything changed...</p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="fade">
+    <h2>Something I Always Wanted to Tell You</h2>
+    <button onclick="toggleLetter()">Open Letter 💌</button>
+    <div id="letter">
+      <img src="personal_msg.jpeg">
     </div>
+  </section>
 
-    <!-- MEMORIES -->
-    <div class="section">
-      <h2>Our Memories 📸</h2>
-      <div class="gallery">
-        <img src="img1.jpg">
-        <img src="img2.jpg">
-      </div>
+  <!-- SECTION 3 -->
+  <section class="fade">
+    <h2>Our Beautiful Memories</h2>
+    <button onclick="toggleSlideshow()">See Our Moments ❤️</button>
+    <div id="slideshow">
+      <img id="slideImg" src="img1.jpeg" alt="Memory">
     </div>
+  </section>
 
-    <!-- BUTTON -->
-    <div class="section">
-      <button onclick="showMessage()">Tap Here ❤️</button>
-      <p id="hiddenMessage" class="hidden">No matter the distance, it's always you ❤️</p>
-    </div>
+  <!-- SECTION 4 -->
+  <section class="fade">
+    <h2>Just One More Thing...</h2>
+    <button onclick="showFinalMessage()">Read ❤️</button>
+    <p id="finalText"></p>
+  </section>
 
-  </div>
+  </section>
+
 </div>
+
+<audio id="bg-music" src="music.mp3"></audio>
 
 <script src="script.js"></script>
 </body>
